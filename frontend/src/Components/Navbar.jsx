@@ -12,7 +12,7 @@ import Exploreslider from '../pages/Exploreslider';
 import Discoverslider from '../pages/Discoverslider';
 import Login from '../pages/Login';
 import userimg from '../images/userimg.jpg';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Navbar() {
        
@@ -56,7 +56,7 @@ export default function Navbar() {
             ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full md:translate-x-0'}`}
         >
         <div */}
-
+     
          <div
           className={`absolute md:static top-24 left-0 h-screen md:h-auto w-full md:w-auto bg-white md:bg-transparent p-8 md:p-0 flex flex-col md:flex-row gap-6 transform transition-transform duration-300 ease-in-out 
             ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}`}
@@ -71,19 +71,21 @@ export default function Navbar() {
     
   
     <ul className='absolute hidden group-hover:block  bg-white shadow-lg p-4 space-y-2 w-60'>
-      <li className='flex'>
+     <Link to="//apptitudepage"><li className='flex cursor-pointer'>
         <img src={aptinav} className='w-8 h-10'/>
         <span className='p-3'>Aptitude Test</span>
-      </li>
+      </li></Link>
+      <Link to="/personality">
       <li className='flex'>
         <img src={workplace} className='w-8 h-10 mt-5'/>
         <span className='pt-4 pl-3 text-start'>Workplace Personality Assessment</span>
       </li>
+      </Link>
     
     </ul>
   </li>
-            <li className='flex md:hidden'><img src={aptinav}/><span className='p-3'>Aptitude Test</span></li>
-            <li className='flex md:hidden'><img src={workplace}/><span className='p-3'>Workplace Personality Assessment</span></li>
+  <Link to="/apptitudepage"> <li className='flex md:hidden' onClick={toggleMobileMenu}><img src={aptinav}/><span className='p-3'>Aptitude Test</span></li></Link>
+  <Link to="/personality">   <li className='flex md:hidden' onClick={toggleMobileMenu}><img src={workplace}/><span className='p-3'>Workplace Personality Assessment</span></li></Link>
             <li className='flex md:hidden'><span className='p-3 font-bold'><a href="/">Home</a></span></li>
           
           </ul>
@@ -92,7 +94,7 @@ export default function Navbar() {
                 <button className='text-white bg-[rgb(0,155,93)] w-[74px] h-[30px] rounded-xl font-bold' onClick={toggleLogin} >Login</button>
               </div>
               <div className='w-24 h-20 px-1' onClick={()=>{navigate("/profile")}}><img src={userimg} className='w-full h-full rounded-[50%]'/></div>      
-              <Exploreslider exploreOpen={exploreOpen} toggleExplore={toggleExplore}/>
+              <Exploreslider exploreOpen={exploreOpen} toggleMobileMenu={toggleMobileMenu} toggleExplore={toggleExplore}/>
               <Discoverslider discoverOpen={discoverOpen} toggleDiscover={toggleDiscover}/>
           
            </nav>

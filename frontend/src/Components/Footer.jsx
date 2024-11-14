@@ -40,7 +40,7 @@ function Footer() {
 
            <div className="md:flex md:justify-between py-3">
             <div className="flex gap-x-4 my-3 ml-6">
-                <img src={footerlogo} className="w-40 h-18" />
+                <img src={footerlogo} className="w-18 h-12" />
                 <div className="text-white flex flex-col gap-y-2">
                     <div className="flex gap-x-4 cursor-pointer"><div className="h-5 w-5 bg-[rgb(11,36,65)] rounded-full border-2 border-white "><p className="text-sm pl-1 ">?</p></div>  FAQs</div>
                     <div className="flex gap-x-4 cursor-pointer"><div className="h-5 w-5 bg-[rgb(11,36,65)] rounded-full border-2 border-white "><p className="text-sm pl-1 ">?</p></div>Customer Support</div>

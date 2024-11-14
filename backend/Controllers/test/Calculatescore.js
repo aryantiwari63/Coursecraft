@@ -75,7 +75,7 @@ exports.submitscore = async (req, res) => {
       return res.status(404).json({ message: 'Questions not found for this category.' });
     }
      
-    let score = 0;
+    let score = -1;
     const totalQuestions = questions.questions.length;
 
 

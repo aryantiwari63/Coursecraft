@@ -135,8 +135,22 @@ function Questionpage({ category }) {
     questionHandler();
   }, [category]);
 
+  useEffect(() => {
+    // Clear the selected options when changing the page to avoid selection carry-over
+    setSelectedOptions(prevState => {
+      const updatedState = {};
+      Object.keys(prevState).forEach(key => {
+        if (parseInt(key) >= firstindex && parseInt(key) < lastindex) {
+          updatedState[key] = prevState[key];
+        }
+      });
+      return updatedState;
+    });
+  }, [currentpage]);
+  
+
   return (
-    <div className='lg:mt-[400px]'>
+    <div className='lg:mt-[0px]'>
       {allQuestions.length > 0 ? (
         currentitems.map((question, index) => (
           <div key={index} className="mb-4 flex flex-col gap-y-6 mt-10 text-sm sm:text-md">

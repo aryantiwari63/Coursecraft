@@ -10,6 +10,8 @@ import business from '../images/businessimg.PNG';
 import management from '../images/managementimg.PNG';
 
 function Discoverslider({discoverOpen,toggleDiscover}) {
+
+          
   return (
     <div className={`fixed top-24  right-0 transform ${discoverOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out w-full h-full bg-white shadow-lg z-50 overflow-y-auto pt-10`}>
              <div className='flex justify-between px-4'>
@@ -42,7 +44,7 @@ function Discoverslider({discoverOpen,toggleDiscover}) {
                 <div className='text-sm'><p className='font-semibold'>Marketing & Sales</p><p>(506 Courses)</p></div>
                 <span className='absolute right-5 w-2 h-2 border-r-2 border-b-2 border-black transform rotate-45 transition-transform rotate-[-45deg] '></span>
                 </li>
-               
+                  
                 <li className='flex gap-x-4'>
                 <img src={management} className='w-8 h-8'/>
                 <div className='text-sm'><p className='font-semibold'>Hospitality & Tourism</p><p>(506 Courses)</p></div>

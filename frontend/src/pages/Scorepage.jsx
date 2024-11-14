@@ -3,15 +3,17 @@ import {faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import React, { useEffect, useState } from 'react'
 import { submitscore } from '../services/submitscore';
 import {userscore} from '../services/userscore';
+import { useParams } from 'react-router-dom';
 
 function Scorepage() {
           const [userScore, setUserScore] = useState("");
-          
+          const {category} = useParams();
+
            const Score = async()=>{
              const response = await userscore();
                   console.log(response);
              if(response){
-               setUserScore(response);
+               setUserScore(response.category);
              }
            }
 
@@ -28,12 +30,12 @@ function Scorepage() {
            </div>
            <FontAwesomeIcon icon={faArrowRight} className='rotate-90 md:rotate-0 text-4xl text-sky-700 md:pt-8'/>
            <div className='w-[140px] h-[140px] rounded-full outline outline-sky-700 outline-[4px] font-bold text-2xl flex gap-x-2 justify-center items-center'>
-               <p>Score</p><p>40</p>
+               <p>Score</p><p>40 {userScore}</p>
            </div>
            <FontAwesomeIcon icon={faArrowRight} className='rotate-90 md:rotate-0 text-4xl text-sky-700 md:pt-8'/>
            <div className='w-[140px] h-[140px] rounded-full outline outline-sky-700 outline-[4px] font-bold text-2xl flex flex-col justify-center items-center'>
               <p>In percentage</p>
-              <p>40%</p>
+              <p>{userScore}%40%</p>
            </div>
         
        </div>

@@ -4,7 +4,7 @@ const userschema = new mongoose.Schema({
     name: String,
     email: String,
     password: String,
-   
+    profileimg: String,
 })
 
 userschema.pre('save', async function (next) {

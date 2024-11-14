@@ -56,7 +56,7 @@ function Testpage() {
     };
 
     return (
-        <div className="lg:flex h-screen mt-3 lg:mx-6">
+        <div className="lg:flex  mt-3 lg:mx-6">
             <div className="font-bold flex   gap-y-8 w-[300px] flex-wrap md:w-[600px] lg:flex-col justify-between lg:justify-evenly  lg:w-[20%] lg:h-[60%] mx-auto mt-12">
                 <div className="flex gap-x-3 cursor-pointer text-md lg:text-xl bg-purple-400 rounded-full p-1.5 lg:justify-center" onClick={() => handleTestSelection('Verbal')}>
                     <span>★</span> <p>Verbal test</p>

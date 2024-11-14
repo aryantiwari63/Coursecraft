@@ -2,7 +2,7 @@ const axios = require('axios');
 
 export const resetpassword = (newpassword,confirm) =>{
     try{
-    const res = axios('http://localhost:5000/api/resetpassword',{newpassword,confirm});
+    const res = axios.post('http://localhost:5000/api/resetpassword',{newpassword,confirm});
     return res;
     }
     catch(error){

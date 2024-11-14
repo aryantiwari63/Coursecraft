@@ -26,6 +26,9 @@ import Coursedetailpage from './pages/Coursedetailpage';
 import Emailpage from './pages/Emailpage';
 import Resetpassword from './pages/Resetpassword';
 import Scorepage from './pages/Scorepage';
+import Singlecoursepage from './pages/Singlecoursepage';
+import Enrollmentpage from './pages/Enrollmentpage';
+import Scoretable from './pages/Scoretable';
 
 
 function App() {
@@ -37,7 +40,7 @@ function App() {
         <Route path="/apptitudepage" element={<Apptitude/>}/>
         <Route path="/careerPage" element={<Career/>}/>
         <Route path="/earnPage" element={<Earnpage/>}/>
-        <Route path="/itcoursepage" element={<Coursepage/>}/>
+        <Route path="/itcoursepage/:category" element={<Coursepage/>}/>
         <Route path="/login" element={<Login/>}/> 
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/personality" element={<Personality/>}/>
@@ -52,6 +55,11 @@ function App() {
         <Route path="/reset-password/:token" element={<Resetpassword/>}/>
         {/* <Route path="/scorepage/:category" element={<Scorepage/>}/> */}
         <Route path="/scorepage" element={<Scorepage/>}/>
+        {/* <Route path="/maincourse" element={<Singlecoursepage/>} /> */}
+          <Route path="/coursepage/:id" element={<Singlecoursepage/>}/>
+          <Route path="/enrollmentform" element={<Enrollmentpage/>}/>
+          <Route parh="/itcoursepage" element={<Courses/>}/>
+          <Route path="/scoretable" element={<Scoretable/>}/>
       </Routes>
     
     </div>
