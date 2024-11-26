@@ -33,6 +33,6 @@ export const enrollverify = async (courseid) => {
   
 });
 
-
+ console.log(response);
   return response;
 };

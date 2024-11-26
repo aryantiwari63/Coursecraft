@@ -1,13 +1,13 @@
 import axios from 'axios';
 
 
-export const userscore = async(req,res)=>{
+export const userscore = async()=>{
 
      const token = localStorage.getItem('token');
      
   try{
         const res = await axios.get("http://localhost:5000/api/userscore",{
-          
+        
             headers:{
               Authorization: `${token}`,
             }

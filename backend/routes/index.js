@@ -23,6 +23,21 @@ const {getsubcategory} = require("../Controllers/course/getsubcategory");
 const {enrollment} = require("../Controllers/course/enrollment");
 const {verifyenroll} = require("../Controllers/course/verifyenroll");
 const {getenrolllist} = require("../Controllers/course/getenrolllist");
+const {unenroll} = require("../Controllers/course/unenroll");
+
+const {admincourse} = require("../Controllers/Admin/course/addcourse");
+const {adminaddsubcategory}= require("../Controllers/Admin/course/addsubcategory");
+const {admincourselist} = require("../Controllers/Admin/course/courselist");
+const {adminuserlist} = require("../Controllers/Admin/profile/userslist");
+const {adminsubcategorylist} = require("../Controllers/Admin/course/subcategorylist");
+const {Blocklist} = require("../Controllers/Admin/profile/blocklist");
+const {unBlocklist} = require("../Controllers/Admin/profile/unblocklist");
+const {adminremovecourse} = require("../Controllers/Admin/course/removecourse");
+const { adminsignup} = require("../Controllers/Admin/profile/signup");
+const {adminlogin} = require("../Controllers/Admin/profile/login");
+const {addquestion} = require("../Controllers/Admin/course/addquestion");
+const {adminlist} = require("../Controllers/Admin/profile/addminlist");
+
 const multer = require('multer');
 
 const storage = multer.diskStorage({
@@ -48,7 +63,7 @@ router.post("/question", Question );
 
 router.get("/getquestion", getQuestion);
 
-router.post("/submitscore", submitscore);
+router.post("/submitscore",Authmiddleware, submitscore);
 
 router.post("/course", course);
 
@@ -76,8 +91,36 @@ router.get('/getenrolllist', Authmiddleware, getenrolllist);
 
 router.post('/upload-profile-image',  upload.single('image'), uploadimg);
 
+router.post('/unenroll',Authmiddleware, unenroll);
 
 
+
+
+//Admin->
+router.post('/addminaddcourse', admincourse);
+
+router.post('/adminsubcategory', adminaddsubcategory);
+
+router.get('/admincourselist', admincourselist);
+
+router.get('/adminuserlist', adminuserlist);
+
+router.get('/adminsubcategorylist', adminsubcategorylist);
+
+router.post('/adminblocklist', Blocklist); 
+
+router.post('/adminunblocklist', unBlocklist);
+
+router.delete('/adminremovecourse', adminremovecourse);
+
+router.post('/adminsignup', adminsignup);
+
+router.post('/adminlogin', adminlogin);
+
+router.post('/question', addquestion);
+
+router.get('/adminlist', adminlist);
 
 module.exports = router;
 
+``

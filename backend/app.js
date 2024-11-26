@@ -3,6 +3,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const jwt = require('jsonwebtoken');
 const userRoutes = require('./routes/index');
+
 const db = require("./db");
 
 dotenv.config();
@@ -14,6 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api', userRoutes);
+
 
 const PORT = process.env.PORT || 5000;
 

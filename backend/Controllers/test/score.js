@@ -14,7 +14,7 @@ const scoremodel = require("../../Models/Scoreboard");
 
 exports.score = async (req, res) => {
     try {
-        // Find the user in the score model based on user ID
+         
         const user = await scoremodel.findOne({ userid: req.user.id }).select('-password');
 
         // Check if the user exists in the score model

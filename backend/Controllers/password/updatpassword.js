@@ -1,13 +1,14 @@
 const jwt = require('jsonwebtoken');
 const dotenv = require('dotenv');
+const bcrypt = require('bcryptjs');
 const useraccountmodel = require("../../Models/Useraccount");
 
 dotenv.config();
 
 exports.updatepassword = async(req,res)=>{
            
-             const { token } = req.params;
-             const { newpassword } = req.body;
+             
+             const { newpassword, token } = req.body;
              console.log(newpassword);
              console.log("token from mail",token);
              let decoded;

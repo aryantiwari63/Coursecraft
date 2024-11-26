@@ -7,12 +7,14 @@ import {profiledata} from '../services/profile';
       
 function Profile() {
      const [userdetail, setUserDetail] = useState("");
-      const [logoutbut, setLogoutbut] = useState(true);
+      const [logoutbut, setLogoutbut] = useState(false);
      const navigate = useNavigate();
-     const logouthandle =()=>{
-          const response = logoutfun();
-          if(response){
-               setLogoutbut(false);
+
+     const logouthandle = async()=>{
+          const response = await logoutfun();
+          console.log(response);
+          if(response.status === 200){
+               setLogoutbut(true);
                console.log("logout");
                navigate("/login");
           }
@@ -34,11 +36,11 @@ function Profile() {
           };
           fetchUserData();
         }, []);
-
+         
 
 
       
-  
+    
   return (
     <div className='flex flex-col gap-y-6'>
         <div className='w-[300px]  mx-auto mt-4 lg:flex lg:w-[400px] lg:justify-between'>
@@ -52,10 +54,12 @@ function Profile() {
             </div>
         </div>
         <div className='flex max-w-[320px] md:w-[540px] h-[280px] justify-between gap-x-3 flex-wrap mx-auto'>
+          <Link to="/enrollcourselist">
            <div className='w-36 h-24 bg-[rgb(224,224,247)] rounded-md  flex items-center justify-center'>
                 <h3>Enrollment Courses</h3>
-            
+             
            </div>
+           </Link>
            <Link to="/scoretable">
            <div className='w-36 h-24 bg-[rgb(224,224,247)]  rounded-md flex items-center justify-center'>
                 <h3>Test Score</h3>
@@ -68,6 +72,10 @@ function Profile() {
            <div className='w-36 h-24 bg-[rgb(224,224,247)]  rounded-md flex items-center justify-center'>
                 <h3>Bookmarks</h3>
            </div>
+            
+            <div className={`${logoutbut ? 'hidden' : 'block' } bg-black text-white font-bold h-8 rounded-full px-2`} onClick={logouthandle}>
+               <button>Logout</button>
+            </div>
         </div>
 
     </div>

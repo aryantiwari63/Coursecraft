@@ -65,7 +65,8 @@ exports.submitscore = async (req, res) => {
   //     return res.status(500).json({ message: 'Server error' });
   //   }
 
-  const { category, selectedOptions, userid } = req.body;
+  const { category, selectedOptions} = req.body;
+  const userid = req.user.id;
   console.log(req.body);
   try {
         
@@ -75,7 +76,7 @@ exports.submitscore = async (req, res) => {
       return res.status(404).json({ message: 'Questions not found for this category.' });
     }
      
-    let score = -1;
+    let score = 0;
     const totalQuestions = questions.questions.length;
 
 
@@ -97,10 +98,10 @@ exports.submitscore = async (req, res) => {
       
       const newuser = await scoreboard.create({
         userid,
-        Verbal: 0,
-        Numerical: 0,
-        Abstract: 0,
-        Personality: 0,
+        Verbal: -1,
+        Numerical: -1,
+        Abstract: -1,
+        Personality: -1,
       });
 
       

@@ -40,7 +40,7 @@ exports.enrollment = async (req, res) => {
     try {
         let { email, courseid } = req.body;
 
-           console.log(courseid);
+           console.log(email,courseid);
         let enrollment = await enrollmodel.findOne({ email });
 
         if (!enrollment) {

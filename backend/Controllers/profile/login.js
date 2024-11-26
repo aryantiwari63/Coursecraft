@@ -2,6 +2,8 @@ const bcrypt = require('bcryptjs');
 const usermodel = require("../../Models/Useraccount");
 const dotenv = require("dotenv");
 const jwt = require('jsonwebtoken');
+const booklistmodel = require('../../Models/Blocklist');
+
 dotenv.config();
 
 exports.login = async (req, res) => {
@@ -12,7 +14,13 @@ exports.login = async (req, res) => {
         if (!email || !password) {
             return res.status(400).send("Please fill all fields");
         }
+         
+        const checkblocklist = await booklistmodel.findOne({email});
 
+         if( checkblocklist){
+             return res.status(403).json({message: "user is in blocklist"});
+         }
+         
         const user = await usermodel.findOne({ email });
 
         if (!user) {

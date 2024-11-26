@@ -31,7 +31,7 @@ function Faq() {
                         <div
                             className={`faq-answer overflow-hidden transition-all duration-300 ease-in-out px-4 py-2 bg-white bg-opacity-10 ${activeIndex === index ? 'max-h-[1000px] visible' : 'max-h-0 invisible'}`}
                         >
-                            <p className="text-sm">{item.answer}</p>
+                            <p className="text-sm text-start">{item.answer}</p>
                         </div>
                     </div>
                 ))}

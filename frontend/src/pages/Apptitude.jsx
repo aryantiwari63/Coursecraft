@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React,{useEffect} from 'react'
 
 import aptitudetext from '../images/aptitudetest.PNG'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -29,6 +29,10 @@ function Apptitude() {
         navigate('/abstracttest');
      } 
 
+     useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
+    
 
   return (
     <div>
@@ -74,19 +78,19 @@ function Apptitude() {
             </div>
 
             <div className='shadow-2xl rounded-2xl'>
-                <div  className='p-2 '><img src={apt2} className='h-[100%] w-[100%] rounded-md'/></div>
+                <div  className='p-2 md:h-[250px] lg:h-[370px]'><img src={apt2} className='h-[100%] w-[100%] rounded-md'/></div>
                 <div className='mt-4'>
-                    <h2  className='font-bold text-2xl w-[60%] text-center ml-[20%]'>Numerical Reasoning</h2>
+                    <h2  className='font-bold text-2xl w-[64%] text-center ml-[20%]'>Numerical Reasoning</h2>
                 <p className='text-center p-3'>  Assess your ability to analyse and draw logical conclusions from numerical data. This skill is crucial in making business decisions based on numerical evidence.  </p>
                 </div>
-                <div className='flex '>
+                <div className='flex md:mt-3 lg:mt-0'>
                     <div className='w-[60%] flex gap-x-2'><div className='bg-[rgb(224,244,249)] w-9 h-9 rounded-full p-2'><FontAwesomeIcon icon={faQuestion} className='text-[rgb(0,129,182)] text-xl'/></div><div><span className='font-bold'>28</span><p className='text-sm'>questions</p></div></div>
                     <div className='w-[60%] flex gap-x-2'><div className='bg-[rgb(224,244,249)] w-9 h-9 rounded-full p-2'><FontAwesomeIcon icon={faClock} className='text-[rgb(0,129,182)] text-xl'/></div><div><span className='font-bold'>10</span> <p className='font-bold inline md:block'>min</p><p className='text-sm'>Time</p></div></div>
                 </div>
                 <button className='w-full bg-green-700 text-white rounded-xl text-md mt-10 mb-4 p-3' onClick={handlenumerical}>Access  Your Numerical Reasoning</button>
             </div>
             <div className='shadow-2xl rounded-2xl'>
-                <div  className='p-2'><img src={apt3} className='w-[100%] h-[100%] rounded-md'/></div>
+                <div  className='p-2 md:h-[250px]  lg:h-[370px]'><img src={apt3} className='w-[100%] h-[100%] rounded-md'/></div>
                 <div className='mt-4'>
                     <h2  className='font-bold text-2xl w-[60%] text-center ml-[20%]'>Abstract Reasoning</h2>
                 <p className='text-center p-3'>  Assess your ability to think outside the box and examine logical problems. This skill is essential for jobs involving innovation and creative decision-making. </p>
@@ -99,7 +103,6 @@ function Apptitude() {
             </div>
             </div>
       </div>
-
 
 
 

@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
 import { resetpassword } from '../services/resetpassword';
+import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Resetpassword() {
   const [newpassword, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
+ const token = useParams();
+const navigate = useNavigate();
 
   const handleform = ()=>{
     
@@ -11,10 +15,11 @@ function Resetpassword() {
       alert("password and newpassword not match");
     }
  else{
-    const response = resetpassword(newpassword, confirm);
+    const response = resetpassword(newpassword, confirm, token);
     if(response.status===200){
       console.log("password changed");
         alert("password updated");
+        navigate("/");
     }
   }
     }

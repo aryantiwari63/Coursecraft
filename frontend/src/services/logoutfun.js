@@ -7,7 +7,9 @@ export const logoutfun = async()=>{
      const token = localStorage.getItem("token");
    console.log(token);
      const res =  await axios.post("http://localhost:5000/api/logout");
+     if(res.status == 200){
      localStorage.removeItem("token");
+     }
    
      return res;
     }

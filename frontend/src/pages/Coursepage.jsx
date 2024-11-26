@@ -288,6 +288,8 @@ function Coursepage() {
   const dispatch = useDispatch();
   const courses = useSelector(state => state.courses.course);
   const navigate = useNavigate();
+  const islogin = localStorage.getItem('token');
+
   const fetchCourses = async () => {  
     try {
       const response = await categorycourse(category);
@@ -315,6 +317,10 @@ function Coursepage() {
     fetchSubcategory();
   }, [category]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0); 
+  }, []);
+
   const handleSubcategoryClick = (subcategory) => {
     setSelectedSubcategory(subcategory);
   };
@@ -323,7 +329,7 @@ function Coursepage() {
     ? courses.filter(course => course.subcategory === selectedSubcategory)
     : courses;
 
-  // When the "View All Courses" button is clicked, toggle the showAllCourses state
+ 
   const handleViewAllCoursesClick = () => {
     setShowAllCourses(!showAllCourses);
   };
@@ -334,7 +340,7 @@ function Coursepage() {
         <h1 className='font-[900] text-2xl text-center'>Free Online IT and Computing Courses</h1>
         <p className='p-6 text-sm'>IT is one of our most popular categories, with in-depth courses and tutorials across all aspects of information technology. Sign up today to learn about cryptocurrency, blockchain, computer networking and server management. You can take free classes for in-demand languages like Python, JavaScript and C++, applying for official certification to take your programming career to the next level. We also cover growing skills like pentestin...</p>
       </div>
-
+           
       <div className='pt-10'>
         <h2 className='font-[900] text-2xl text-center'>Explore Top Subjects</h2>
         <div className='p-6 pl-14 flex flex-wrap gap-4 text-sm'>
@@ -342,7 +348,7 @@ function Coursepage() {
             <div
               key={index}
               onClick={() => handleSubcategoryClick(subcategory)}
-              className={`bg-[rgb(240,244,247)] text-[rgb(94,104,111)] p-1 rounded-md ${subcategory === selectedSubcategory ? 'bg-blue-200' : ''}`}
+              className={`bg-[rgb(240,244,247)] text-[rgb(94,104,111)] cursor-pointer p-1 rounded-md ${subcategory === selectedSubcategory ? 'bg-blue-200' : ''}`}
             >
               {subcategory}
             </div>
@@ -356,7 +362,7 @@ function Coursepage() {
             <p className='font-bold text-xl'>Most Popular</p>
             <p className='text-[rgb(1,108,148)] font-bold'>IT Courses</p>
           </div>
-          <div className='text-green-700 text-md font-bold underline' onClick={handleViewAllCoursesClick}>
+          <div className='text-green-700 text-md font-bold underline cursor-pointer' onClick={handleViewAllCoursesClick}>
             {showAllCourses ? 'Show Filtered Courses' : 'View All Courses'}
           </div>
         </div>
@@ -378,7 +384,7 @@ function Coursepage() {
                     </div>
                   </div>
                   <div className='flex justify-around'>
-                    <button className='p-3 rounded-md text-sm font-bold' onClick={()=>{navigate(`/coursepage/${course._id}`)}}>More Info</button>
+                    <button className='p-3 rounded-md text-sm font-bold' onClick={()=>{if(islogin){navigate(`/coursepage/${course._id}`)}else{navigate('/login')}}}>More Info</button>
                     <button className='bg-green-700 text-white rounded-xl text-sm font-bold p-2 h-8'>
                       Start Learning
                     </button>
@@ -387,7 +393,7 @@ function Coursepage() {
               </div>
             ))
           ) : (
-            <p>Loading courses...</p>
+            <p className='text-2xl font-bold text-orange-300'>Comming soon...</p>
           )}
         </div>
       </div>

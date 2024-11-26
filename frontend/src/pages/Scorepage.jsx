@@ -8,15 +8,15 @@ import { useParams } from 'react-router-dom';
 function Scorepage() {
           const [userScore, setUserScore] = useState("");
           const {category} = useParams();
-
+     
            const Score = async()=>{
              const response = await userscore();
-                  console.log(response);
+                  console.log("score res is:",response);
              if(response){
-               setUserScore(response.category);
+               setUserScore(response.user.category);
              }
            }
-
+  
            useEffect(()=>{
             Score()
            },[]);

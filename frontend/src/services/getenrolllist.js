@@ -11,7 +11,7 @@ export const enrolllist = async()=>{
       
     });
     console.log(res);
-    return res.data;
+    return res;
 }
 catch(error){
     throw new Error(error);

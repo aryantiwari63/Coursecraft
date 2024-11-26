@@ -10,12 +10,12 @@ export const submitscore = async (category,selectedOptions) => {
     },
     {
       headers: {
-        'Authorization': `Bearer ${token}`, 
+        Authorization: `${token}`, 
       },
     }
 );
     
-    return res.data;
+    return res;
   } catch (error) {
     throw new Error('Network response was not ok: ' + error.message);
   }

@@ -3,7 +3,11 @@ module.exports = {
     './src/**/*.{html,js,jsx,ts,tsx}', // Adjust paths as needed
   ],
   theme: {
-    extend: {},
+    extend: {
+       screens:{
+        xs: "420px",
+       },
+    },
   },
   plugins: [],
 };

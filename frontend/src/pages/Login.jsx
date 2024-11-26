@@ -121,7 +121,7 @@ const Login = ({ IsLoginOpen, toggleLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const [IsSignupopen, setIsSignup] = useState(false); // Added state for signup modal
+  const [IsSignupopen, setIsSignup] = useState(false); 
 
   if (!IsLoginOpen) return null;
 
@@ -130,7 +130,7 @@ const Login = ({ IsLoginOpen, toggleLogin }) => {
   };
 
   const togglesignup = () => {
-    setIsSignup(!IsSignupopen); // Toggle signup modal
+    setIsSignup(!IsSignupopen); 
   };
 
   const handleform = async (event) => {
@@ -138,6 +138,11 @@ const Login = ({ IsLoginOpen, toggleLogin }) => {
     
     const response = await loginservice(password, email);
     console.log(response);
+
+    if(response.status === 403){
+         alert('Your account has been blocked ');
+    }
+
     if (response.status === 200) {
       alert('login successful');
       const { token } = response.data;

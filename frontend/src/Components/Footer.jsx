@@ -1,30 +1,31 @@
 import React from 'react'
 import footerlogo from '../images/footerlogo.png';
-
+import { useNavigate } from 'react-router-dom';
 
 function Footer() {
+     const navigate = useNavigate();
     return (
         <div className=" bg-[rgb(11,36,65)]">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-y-4 px-16  gap-x-16">
                 <ul className=" w-[200px] text-[rgb(210,216,192)] text-[14px]">
                     <h2 className="my-4 sm:mb-0 text-[16px] font-bold text-white">FREE ONLINE COURSE CATEGORIES</h2>
-                    <li className="hover:underline cursor-pointer">IT</li>
-                    <li className="hover:underline cursor-pointer">Health</li>
-                    <li className="hover:underline cursor-pointer">Language</li>
-                    <li className="hover:underline cursor-pointer">Business</li>
-                    <li className="hover:underline cursor-pointer">Management</li>
-                    <li className="hover:underline cursor-pointer">Sales & Marketing</li>
+                    <li className="hover:underline cursor-pointer" onClick={ ()=>{navigate(`/itcoursepage/It`);}}>IT</li>
+                    <li className="hover:underline cursor-pointer" onClick={ ()=>{navigate(`/itcoursepage/Health`);}}>Health</li>
+                    <li className="hover:underline cursor-pointer" onClick={ ()=>{navigate(`/itcoursepage/Language`);}}>Language</li>
+                    <li className="hover:underline cursor-pointer" onClick={ ()=>{navigate(`/itcoursepage/Business`);}}>Business</li>
+                    <li className="hover:underline cursor-pointer" onClick={ ()=>{navigate(`/itcoursepage/Management`);}}>Management</li>
+                    <li className="hover:underline cursor-pointer" onClick={ ()=>{navigate(`/itcoursepage/Sales & Marketing`);}}>Sales & Marketing</li>
                 </ul>
 
 
 
                 <ul className=" w-[200px] text-[rgb(210,216,192)] text-[14px]">
                     <h2 className="my-4 text-[16px] font-bold text-white">DISCOVER MORE</h2>
-                    <li className="hover:underline cursor-pointer">Aptitude Test</li>
-                    <li className="hover:underline cursor-pointer">Verbal Reasoning Test</li>
-                    <li className="hover:underline cursor-pointer">Numerical  Reasoning Test</li>
-                    <li className="hover:underline cursor-pointer">Abstract  Reasoning Test</li>
-                    <li className="hover:underline cursor-pointer">Free Personality Test</li>
+                    <li className="hover:underline cursor-pointer" onClick={()=>{navigate("apptitudepage")}}>Aptitude Test</li>
+                    <li className="hover:underline cursor-pointer" onClick={()=>{navigate("/verbaltest")}}>Verbal Reasoning Test</li>
+                    <li className="hover:underline cursor-pointer" onClick={()=>{navigate("/numericaltest")}}>Numerical  Reasoning Test</li>
+                    <li className="hover:underline cursor-pointer" onClick={()=>{navigate("/abstracttest")}}>Abstract  Reasoning Test</li>
+                    <li className="hover:underline cursor-pointer" onClick={()=>{navigate("/personality")}}>Free Personality Test</li>
                 </ul>
 
                 <ul className=" w-[200px] text-[rgb(210,216,192)] text-[14px]">
