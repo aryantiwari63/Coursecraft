@@ -2,8 +2,9 @@
 import axios from "axios";
 
 export const adminsubcategorylist = async() =>{
+  //http://localhost:5000/api/adminsubcategorylist 
         try{
-          const response = await axios.get("http://localhost:5000/api/adminsubcategorylist");
+          const response = await axios.get("https://coursecraft-backend-3pke.onrender.com");
           console.log("sub:",response);
           return response.data;
         }catch(error){

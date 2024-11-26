@@ -2,8 +2,9 @@ import axios from 'axios';
 
 
 export const signup = async (formData) => {
+  //http://localhost:5000/api/adminsignup 
   try{
- const response = await axios.post('http://localhost:5000/api/adminsignup',{
+ const response = await axios.post('https://coursecraft-backend-3pke.onrender.com',{
   formData
  });
   
