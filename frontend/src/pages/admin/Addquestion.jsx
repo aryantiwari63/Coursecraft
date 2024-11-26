@@ -178,9 +178,9 @@ const Addquestion = () => {
             alert('Please fill in all fields, including question, options, and correct answer.');
             return;
         }
-
+          //http://localhost:5000/api/question 
         try {
-            const response = await axios.post('http://localhost:5000/api/question', {
+            const response = await axios.post('https://coursecraft-backend-3pke.onrender.com', {
                 question: newQuestion,
                 options,
                 correctAnswer,

@@ -2,8 +2,9 @@ import axios from 'axios';
 
 
 export const fetchsignupform = async (name, email, password) => {
+  //http://localhost:5000/api/signup
   try{
- const response = await axios.post('http://localhost:5000/api/signup',{
+ const response = await axios.post('https://coursecraft-backend-3pke.onrender.com',{
   name, email, password
  });
   

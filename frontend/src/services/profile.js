@@ -5,8 +5,9 @@ export const profiledata = async(req,res) =>{
   if(!token){
     throw new Error("token not found");
   }
+  //http://localhost:5000/api/profiledetail
     try{     
-         const response = await axios.get('http://localhost:5000/api/profiledetail', {
+         const response = await axios.get('https://coursecraft-backend-3pke.onrender.com', {
               
                 headers: {
                   Authorization: `${token}`,

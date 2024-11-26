@@ -2,9 +2,10 @@
 import axios from 'axios';
 
 export const getquestion = async (category) => {
+  //http://localhost:5000/api/getquestion 
   try {
     console.log(category);
-    const res = await axios.get('http://localhost:5000/api/getquestion', {
+    const res = await axios.get('https://coursecraft-backend-3pke.onrender.com', {
       params: {
         category, 
       },

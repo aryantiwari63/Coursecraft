@@ -3,9 +3,10 @@ import axios from 'axios';
 
 export const submitscore = async (category,selectedOptions) => {
     const token = localStorage.getItem('token'); 
+    //http://localhost:5000/api/submitscore
   try {
     console.log(category);
-    const res = await axios.post('http://localhost:5000/api/submitscore', {
+    const res = await axios.post('https://coursecraft-backend-3pke.onrender.com', {
         category, selectedOptions
     },
     {

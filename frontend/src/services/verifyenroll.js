@@ -24,8 +24,8 @@ export const enrollverify = async (courseid) => {
   //     Authorization: `${token}`,  
   //   },
   // });
-
-  const response = await axios.get("http://localhost:5000/api/verifyenroll",{
+//http://localhost:5000/api/verifyenroll
+  const response = await axios.get("https://coursecraft-backend-3pke.onrender.com",{
     params: { courseid },
     headers:{
       Authorization: `${token}`,
