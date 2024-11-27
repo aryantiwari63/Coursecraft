@@ -104,7 +104,7 @@ export default function Navbar({handleExploreCourses}) {
   <Link to="/apptitudepage"> <li className='flex md:hidden' onClick={toggleMobileMenu}><img src={aptinav}/><span className='p-3'>Aptitude Test</span></li></Link>
   <Link to="/personality">   <li className='flex md:hidden' onClick={toggleMobileMenu}><img src={workplace}/><span className='p-3'>Workplace Personality Assessment</span></li></Link>
             <li className='flex md:hidden'><span className='p-3 font-bold'><a href="/">Home</a></span></li>
-            <li className='flex md:hidden'><span className='p-3 font-bold'><a href="/adminpanel">Adminpanel</a></span></li>
+            <li className='flex md:hidden'><span className='p-3 font-bold'><a href="/adminlogin">Adminpanel</a></span></li>
            
           </ul>
         </div>
