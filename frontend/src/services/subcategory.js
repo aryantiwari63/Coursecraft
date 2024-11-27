@@ -5,7 +5,7 @@ import axios from "axios";
 export const subcategory = async (category) => {
    //http://localhost:5000/api/getsubcategory
     try {
-        const response = await axios.get("https://coursecraft-backend-3pke.onrender.com", {
+        const response = await axios.get("https://coursecraft-backend-3pke.onrender.com/api/getsubcategory", {
             params: { category },
         });
         console.log(response);

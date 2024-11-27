@@ -6,7 +6,7 @@ export const submitscore = async (category,selectedOptions) => {
     //http://localhost:5000/api/submitscore
   try {
     console.log(category);
-    const res = await axios.post('https://coursecraft-backend-3pke.onrender.com', {
+    const res = await axios.post('https://coursecraft-backend-3pke.onrender.com/api/submitscore', {
         category, selectedOptions
     },
     {

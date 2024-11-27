@@ -2,8 +2,9 @@
 import axios from "axios";
 
 export const blocklist = async(email) =>{
+  //http://localhost:5000/api/adminblocklist 
         try{
-          const response = await axios.post("http://localhost:5000/api/adminblocklist",{email});
+          const response = await axios.post("https://coursecraft-backend-3pke.onrender.com/api/adminblocklist",{email});
           console.log(response);
           return response;
         }catch(error){
@@ -13,8 +14,9 @@ export const blocklist = async(email) =>{
 
 
 export const unblocklist = async(email) =>{
+  //http://localhost:5000/api/adminunblocklist  
   try{
-    const response = await axios.post("http://localhost:5000/api/adminunblocklist",{email});
+    const response = await axios.post("https://coursecraft-backend-3pke.onrender.com",{email});
     console.log(response);
     return response;
   }catch(error){

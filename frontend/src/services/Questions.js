@@ -5,7 +5,7 @@ export const getquestion = async (category) => {
   //http://localhost:5000/api/getquestion 
   try {
     console.log(category);
-    const res = await axios.get('https://coursecraft-backend-3pke.onrender.com', {
+    const res = await axios.get('https://coursecraft-backend-3pke.onrender.com/api/getquestion ', {
       params: {
         category, 
       },

@@ -5,7 +5,7 @@ import axios from "axios";
 export const categorycourse = async (category) => {
    //http://localhost:5000/api/categorycourse
     try {
-        const response = await axios.get("https://coursecraft-backend-3pke.onrender.com", {
+        const response = await axios.get("https://coursecraft-backend-3pke.onrender.com/api/categorycourse", {
             params: { category },
         });
        

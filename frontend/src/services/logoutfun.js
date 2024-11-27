@@ -6,7 +6,7 @@ export const logoutfun = async()=>{
     try{
      const token = localStorage.getItem("token");
    console.log(token);
-     const res =  await axios.post("https://coursecraft-backend-3pke.onrender.com");
+     const res =  await axios.post("https://coursecraft-backend-3pke.onrender.com/api/logout");
      if(res.status == 200){
      localStorage.removeItem("token");
      

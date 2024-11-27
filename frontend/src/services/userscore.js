@@ -6,7 +6,7 @@ export const userscore = async()=>{
      const token = localStorage.getItem('token');
      //http://localhost:5000/api/userscore
   try{
-        const res = await axios.get("https://coursecraft-backend-3pke.onrender.com",{
+        const res = await axios.get("https://coursecraft-backend-3pke.onrender.com/api/userscore",{
         
             headers:{
               Authorization: `${token}`,

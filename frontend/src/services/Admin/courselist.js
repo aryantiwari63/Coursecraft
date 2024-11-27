@@ -4,7 +4,7 @@ import axios from "axios";
 export const admincourselist = async() =>{
   //http://localhost:5000/api/admincourselist 
         try{
-          const response = await axios.get("https://coursecraft-backend-3pke.onrender.com");
+          const response = await axios.get("https://coursecraft-backend-3pke.onrender.com/api/admincourselist");
           console.log(response);
           return response.data;
         }catch(error){

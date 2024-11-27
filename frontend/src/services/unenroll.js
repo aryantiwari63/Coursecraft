@@ -6,7 +6,7 @@ export const unenroll = async(id)=>{
      const token = localStorage.getItem('token');
      //http://localhost:5000/api/unenroll
   try{
-        const res = await axios.post("https://coursecraft-backend-3pke.onrender.com",
+        const res = await axios.post("https://coursecraft-backend-3pke.onrender.com/api/unenroll",
             {courseid : id},{
           
             headers:{

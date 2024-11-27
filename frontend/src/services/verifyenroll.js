@@ -25,7 +25,7 @@ export const enrollverify = async (courseid) => {
   //   },
   // });
 //http://localhost:5000/api/verifyenroll
-  const response = await axios.get("https://coursecraft-backend-3pke.onrender.com",{
+  const response = await axios.get("https://coursecraft-backend-3pke.onrender.com/api/verifyenroll",{
     params: { courseid },
     headers:{
       Authorization: `${token}`,

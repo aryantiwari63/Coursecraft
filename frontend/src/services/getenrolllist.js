@@ -5,7 +5,7 @@ export const enrolllist = async()=>{
     console.log(token);
     //http://localhost:5000/api/getenrolllist
     try{
-    const res = await axios.get('https://coursecraft-backend-3pke.onrender.com',{
+    const res = await axios.get('https://coursecraft-backend-3pke.onrender.com/api/getenrolllist',{
         headers:{
             Authorization : `${token}`,
         }

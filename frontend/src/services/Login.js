@@ -3,7 +3,7 @@ import axios from 'axios';
 export const loginservice = async(password,email) => {
   //http://localhost:5000/api/login
     try{
-           const res =  await axios.post('https://coursecraft-backend-3pke.onrender.com', {password, email});
+           const res =  await axios.post('https://coursecraft-backend-3pke.onrender.com/api/login', {password, email});
           
            return res;
             

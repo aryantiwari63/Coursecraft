@@ -7,7 +7,7 @@ export const profiledata = async(req,res) =>{
   }
   //http://localhost:5000/api/profiledetail
     try{     
-         const response = await axios.get('https://coursecraft-backend-3pke.onrender.com', {
+         const response = await axios.get('https://coursecraft-backend-3pke.onrender.com/api/profiledetail', {
               
                 headers: {
                   Authorization: `${token}`,
