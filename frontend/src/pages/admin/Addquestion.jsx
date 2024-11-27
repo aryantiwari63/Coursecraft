@@ -180,7 +180,7 @@ const Addquestion = () => {
         }
           //http://localhost:5000/api/question 
         try {
-            const response = await axios.post('https://coursecraft-backend-3pke.onrender.com', {
+            const response = await axios.post('https://coursecraft-backend-3pke.onrender.com/api/question', {
                 question: newQuestion,
                 options,
                 correctAnswer,
