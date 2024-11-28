@@ -111,7 +111,7 @@ export default function Navbar({handleExploreCourses}) {
               <div className='flex gap-x-6 pt-[23px] md:pt-[6px]'>
                 <button className='text-white bg-[rgb(0,155,93)] w-[74px] h-[30px] rounded-xl font-bold' onClick={toggleLogin} >Login</button>
               </div>
-              <div className='w-[68px] h-[60px] md:w-24 md:h-20 px-1' onClick={()=>{navigate("/profile");  toggleMobileMenu(); }} ><img src={userimg} className='w-full h-full rounded-[50%]'/></div>      
+              <div className='w-[68px] h-[60px] md:w-24 md:h-20 px-1' onClick={()=>{navigate("/profile");  }} ><img src={userimg} className='w-full h-full rounded-[50%]'/></div>      
               <Exploreslider exploreOpen={exploreOpen} toggleMobileMenu={toggleMobileMenu} toggleExplore={toggleExplore}/>
               <Discoverslider discoverOpen={discoverOpen} toggleDiscover={toggleDiscover}/>
           
