@@ -33,6 +33,9 @@ function Enrollcourselist() {
     // if(res.status == 200){
     //    alert("course unenrolled");
     // }
+    if(res.status == 200){
+        fetchscourse();
+    }
   }
 
   // return (
