@@ -115,7 +115,7 @@ function Enrollcourselist() {
       <span className="w-2/6">{course.status}</span>
       <button 
         className="px-2 text-red-600" 
-        onClick={() => { deletecoure(course._id); }}
+        onClick={(e) => { e.stopPropagation(); deletecoure(course._id); }}
       >
         
         Unenroll
