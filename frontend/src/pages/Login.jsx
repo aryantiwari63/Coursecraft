@@ -147,6 +147,7 @@ const Login = ({ IsLoginOpen, toggleLogin }) => {
       alert('login successful');
       const { token } = response.data;
       localStorage.setItem('token', token);
+      sessionStorage.setItem('token',token);
       toggleLogin();
     } else {
       alert('login failed');
