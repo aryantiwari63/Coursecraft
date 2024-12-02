@@ -112,7 +112,7 @@ exports.submitscore = async (req, res) => {
     } else {
       
       if (['Verbal', 'Numerical', 'Abstract', 'Personality'].includes(category)) {
-        if(finduser[category]==0){
+        if(finduser[category]== -1 ||finduser[category]== 0 ){
         finduser[category] = score;
         await finduser.save();
         }
