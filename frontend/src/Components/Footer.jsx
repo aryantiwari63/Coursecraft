@@ -6,8 +6,8 @@ function Footer() {
      const navigate = useNavigate();
     return (
         <div className=" bg-[rgb(11,36,65)]">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-y-4 px-16  gap-x-16">
-                <ul className=" w-[200px] text-[rgb(210,216,192)] text-[14px]">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-y-4 sm:px-16  gap-x-16">
+                <ul className=" w-[200px] text-[rgb(210,216,192)] text-[14px] text-start pl-4 sm:pl-0 sm:text-center">
                     <h2 className="my-4 sm:mb-0 text-[16px] font-bold text-white">FREE ONLINE COURSE CATEGORIES</h2>
                     <li className="hover:underline cursor-pointer" onClick={ ()=>{navigate(`/itcoursepage/It`);}}>IT</li>
                     <li className="hover:underline cursor-pointer" onClick={ ()=>{navigate(`/itcoursepage/Health`);}}>Health</li>
@@ -19,7 +19,7 @@ function Footer() {
 
 
 
-                <ul className=" w-[200px] text-[rgb(210,216,192)] text-[14px]">
+                <ul className=" w-[200px] text-[rgb(210,216,192)] text-[14px] text-start pl-4 sm:pl-0 sm:text-center">
                     <h2 className="my-4 text-[16px] font-bold text-white">DISCOVER MORE</h2>
                     <li className="hover:underline cursor-pointer" onClick={()=>{navigate("apptitudepage")}}>Aptitude Test</li>
                     <li className="hover:underline cursor-pointer" onClick={()=>{navigate("/verbaltest")}}>Verbal Reasoning Test</li>
@@ -28,7 +28,7 @@ function Footer() {
                     <li className="hover:underline cursor-pointer" onClick={()=>{navigate("/personality")}}>Free Personality Test</li>
                 </ul>
 
-                <ul className=" w-[200px] text-[rgb(210,216,192)] text-[14px]">
+                <ul className=" w-[200px] text-[rgb(210,216,192)] text-[14px] text-start pl-4 sm:pl-0 sm:text-center">
                     <h2 className="my-4 text-[16px] font-bold text-white">LEARN ABOUT ALISON</h2>
                     <li className="hover:underline cursor-pointer">About Us</li>
                     <li className="hover:underline cursor-pointer">Blog</li>
